@@ -104,8 +104,8 @@ function updateUI() {
     const { totalExpenses, balance } = calculateTotals();
     
     // Update balance and expense displays
-    remainingBalanceDisplay.textContent = `$${balance.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-    totalExpensesDisplay.textContent = `$${totalExpenses.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    remainingBalanceDisplay.textContent = `₹${balance.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    totalExpensesDisplay.textContent = `₹${totalExpenses.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
     
     // Color balance red if negative
     remainingBalanceDisplay.style.color = balance < 0 ? '#f43f5e' : '#10b981';
@@ -142,7 +142,7 @@ function renderExpenseList() {
                 <span class="expense-date">${exp.date}</span>
             </div>
             <div class="expense-right">
-                <span class="expense-amount">-$${exp.amount.toFixed(2)}</span>
+                <span class="expense-amount">-₹${exp.amount.toFixed(2)}</span>
                 <button class="delete-btn" onclick="deleteExpense(${exp.id})" title="Delete Expense">
                     <i data-lucide="trash-2"></i>
                 </button>
